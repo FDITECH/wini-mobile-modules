@@ -10,7 +10,6 @@ npm install react-native-wini-mobile-components
 
 ## Usage
 
-
 ```js
 import { multiply } from 'react-native-wini-mobile-components';
 
@@ -18,7 +17,6 @@ import { multiply } from 'react-native-wini-mobile-components';
 
 const result = await multiply(3, 7);
 ```
-
 
 ## Contributing
 

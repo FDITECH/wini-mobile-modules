@@ -37,6 +37,7 @@ interface TextFieldProps {
   helperTextColor?: string;
   style?: TextStyle;
   autoFocus?: boolean;
+  secureTextEntry?: boolean | undefined;
   type?: KeyboardTypeOptions;
 }
 
@@ -145,6 +146,7 @@ export default class TextField extends React.Component<
             autoFocus={this.props.autoFocus}
             defaultValue={this.state.value}
             onPress={this.props.onPress}
+            secureTextEntry={this.props.secureTextEntry}
             returnKeyType={this.props.returnKeyType}
             onFocus={(ev: NativeSyntheticEvent<TextInputFocusEventData>) => {
               this.setState({ ...this.state, focused: true });

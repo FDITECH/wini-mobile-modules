@@ -4,6 +4,7 @@
   "description": "wini-mobile-components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
+  "private": false,
   "module": "./lib/module/index.js",
   "types": "lib/typescript/module/src/index.d.ts",
   "sideEffects": false,
@@ -174,6 +175,8 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-native-fontawesome": "^0.3.2",
+    "react-native-animated-spinkit": "^1.5.2",
+    "react-native-paper": "^5.13.1",
     "react-native-svg": "^15.11.2"
   }
 }

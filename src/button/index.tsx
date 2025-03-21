@@ -71,8 +71,8 @@ const AppButton = (props: ButtonProps) => {
               gap: 8,
               justifyContent: 'center',
               borderRadius: 24,
-              ...containerStyle,
               backgroundColor: '#EAEAEC',
+              ...containerStyle,
             }
       }
     >

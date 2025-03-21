@@ -1,6 +1,6 @@
 import { SvgXml } from 'react-native-svg';
 
-export const enum ComponentStatus {
+export enum ComponentStatus {
   INFOR = 1,
   ERROR = 2,
   WARNING = 3,

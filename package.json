@@ -1,6 +1,6 @@
 {
   "name": "wini-mobile-components",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "wini-mobile-components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -34,7 +34,7 @@
     "clean": "rimraf lib",
     "prepare": "bob build",
     "build": "bob build",
-    "release": "release-it"
+    "release": "bob build && npm pack && npm publish"
   },
   "keywords": [
     "react-native",
@@ -43,14 +43,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liemnt94/wini-mobile-components.git"
+    "url": "git+https://github.com/FDITECH/wini-mobile-modules.git"
   },
-  "author": "liemnt94 <liemnt.bk@gmail.com> (https://github.com/liemnt94)",
+  "author": "liemnt&chienv <liemnt.bk@gmail.com> (https://github.com/liemnt94)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liemnt94/wini-mobile-components/issues"
+    "url": "https://github.com/FDITECH/wini-mobile-modules/issues"
   },
-  "homepage": "https://github.com/liemnt94/wini-mobile-components#readme",
+  "homepage": "https://github.com/FDITECH/wini-mobile-modules#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

@@ -11,6 +11,10 @@ export { default as Rating } from './rating/rating';
 export { default as WSwitch } from './switch/switch';
 export { default as TextField } from './textfield/textfield';
 export { default as Winicon } from './wini-icon/wini_icon';
-export { type ComponentStatus } from './component-status';
+export { default as FLoading } from './Loading/FLoading';
+export { showSnackbar } from './snackbar/snackbar';
+export { default as FBottomSheet } from './bottom-sheet/bottom-sheet';
+
 // type
-export { type WiniIconName } from './wini-icon/wini_icon';
+export { WiniIconName } from './wini-icon/wini_icon';
+export { ComponentStatus } from './component-status';

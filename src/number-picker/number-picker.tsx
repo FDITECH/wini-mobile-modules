@@ -5,7 +5,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { TypoSkin } from '../../assets/skin/typography';
+import { TextStyleSkin } from '../assets/skin/typography';
 import { useState } from 'react';
 
 export default function NumberPicker({
@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
   },
   title: {
     flex: 1,
-    ...TypoSkin.title5,
+    ...TextStyleSkin.title5,
     textAlign: 'center',
   },
 });

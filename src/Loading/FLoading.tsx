@@ -94,7 +94,7 @@ export const LoadingUI = ({
           borderRadius: 25,
           position: 'absolute',
         }}
-        source={urlImg ? { uri: urlImg } : require('../../assets/appstore.png')}
+        source={urlImg ? { uri: urlImg } : require('../assets/appstore.png')}
       />
     </View>
   );

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { TouchableOpacity, View, type ViewStyle } from 'react-native';
-import { ColorThemes } from '../../assets/skin/colors';
+import { ColorSkin } from '../assets/skin/colors';
 
 interface FRadioProps {
   value: string;
@@ -33,7 +33,7 @@ export default function RadioButton(props: FRadioProps) {
           width: 24,
           borderRadius: 12,
           borderWidth: 2,
-          borderColor: ColorThemes.light.primary_main_color,
+          borderColor: ColorSkin.light.primary_main_color,
           alignItems: 'center',
           justifyContent: 'center',
         },
@@ -46,7 +46,7 @@ export default function RadioButton(props: FRadioProps) {
             height: 12,
             width: 12,
             borderRadius: 6,
-            backgroundColor: ColorThemes.light.primary_main_color,
+            backgroundColor: ColorSkin.light.primary_main_color,
           }}
         />
       ) : null}

@@ -1,10 +1,10 @@
 import { Snackbar, Text } from 'react-native-paper';
 import React, { type ReactNode, createRef } from 'react';
-import { TypoSkin } from '../../assets/skin/typography';
+import { TextStyleSkin } from '../assets/skin/typography';
 import { ComponentStatus } from '../component-status';
 import { TouchableOpacity, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
-import { ColorThemes } from '../../assets/skin/colors';
+import { ColorSkin } from '../assets/skin/colors';
 
 interface FSnackbarState {
   visible?: boolean;
@@ -26,15 +26,15 @@ class CustomSnackbar extends React.Component<Object, FSnackbarState> {
   getBg = () => {
     switch (this.state.status) {
       case ComponentStatus.INFOR:
-        return ColorThemes.light.infor_main_color;
+        return ColorSkin.light.infor_main_color;
       case ComponentStatus.WARNING:
-        return ColorThemes.light.warning_main_color;
+        return ColorSkin.light.warning_main_color;
       case ComponentStatus.ERROR:
-        return ColorThemes.light.error_main_color;
+        return ColorSkin.light.error_main_color;
       case ComponentStatus.SUCCSESS:
-        return ColorThemes.light.success_main_color;
+        return ColorSkin.light.success_main_color;
       default:
-        return ColorThemes.light.infor_main_color;
+        return ColorSkin.light.infor_main_color;
     }
   };
 
@@ -121,7 +121,7 @@ class CustomSnackbar extends React.Component<Object, FSnackbarState> {
               {this.state.label?.length ? (
                 <Text
                   numberOfLines={1}
-                  style={[TypoSkin.heading7, { color: '#ffffff' }]}
+                  style={[TextStyleSkin.heading7, { color: '#ffffff' }]}
                 >
                   {this.state.label ?? ''}
                 </Text>
@@ -129,7 +129,7 @@ class CustomSnackbar extends React.Component<Object, FSnackbarState> {
               {this.state.message?.length ? (
                 <Text
                   numberOfLines={2}
-                  style={[TypoSkin.body3, { color: '#ffffff' }]}
+                  style={[TextStyleSkin.body3, { color: '#ffffff' }]}
                 >
                   {this.state.message ?? ''}
                 </Text>
@@ -137,7 +137,7 @@ class CustomSnackbar extends React.Component<Object, FSnackbarState> {
             </View>
             {this.state.actionTitle?.length ? (
               <TouchableOpacity onPress={this.state.action}>
-                <Text style={[TypoSkin.label4, { color: '#ffffff' }]}>
+                <Text style={[TextStyleSkin.label4, { color: '#ffffff' }]}>
                   {this.state.actionTitle}
                 </Text>
               </TouchableOpacity>

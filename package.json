@@ -1,6 +1,6 @@
 {
   "name": "wini-mobile-components",
-  "version": "1.0.5",
+  "version": "1.0.12",
   "description": "wini-mobile-components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -33,6 +33,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "clean": "rimraf lib",
     "prepare": "bob build",
+    "prettier": "npx prettier --write .",
     "build": "bob build",
     "release": "bob build && npm pack && npm publish"
   },
@@ -59,6 +60,7 @@
     "@evilmartians/lefthook": "^1.5.0",
     "@react-native/eslint-config": "^0.73.1",
     "@release-it/conventional-changelog": "^9.0.2",
+    "@types/color": "^4.2.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
     "commitlint": "^17.0.2",
@@ -175,6 +177,9 @@
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-native-fontawesome": "^0.3.2",
+    "@react-native-async-storage/async-storage": "^2.1.2",
+    "axios": "^1.8.3",
+    "date-fns": "^4.1.0",
     "react-native-animated-spinkit": "^1.5.2",
     "react-native-paper": "^5.13.1",
     "react-native-svg": "^15.11.2"

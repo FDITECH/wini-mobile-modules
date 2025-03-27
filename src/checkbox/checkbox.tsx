@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { TypoSkin } from '../../assets/skin/typography';
+import { TextStyleSkin } from '../assets/skin/typography';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -90,7 +90,7 @@ export function FMultiCheckbox({
           >
             <Text
               style={[
-                TypoSkin.regular2,
+                TextStyleSkin.regular2,
                 { color: disable ? '#667994' : '#00204D' },
               ]}
             >

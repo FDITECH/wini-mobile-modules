@@ -14,7 +14,12 @@ export { default as Winicon } from './wini-icon/wini_icon';
 export { default as FLoading } from './Loading/FLoading';
 export { showSnackbar } from './snackbar/snackbar';
 export { default as FBottomSheet } from './bottom-sheet/bottom-sheet';
-
+export { Checkbox } from './checkbox/checkbox';
+export { DropdownSelect } from './select1/select1';
 // type
 export { WiniIconName } from './wini-icon/wini_icon';
 export { ComponentStatus } from './component-status';
+
+// skin
+export { ColorSkin } from './assets/skin/colors';
+export { TextStyleSkin } from './assets/skin/typography';

@@ -10,9 +10,9 @@ import {
   type TextStyle,
   View,
 } from 'react-native';
-import { TypoSkin } from '../../assets/skin/typography';
+import { TextStyleSkin } from '../assets/skin/typography';
 import React from 'react';
-import { ColorThemes } from '../../assets/skin/colors';
+import { ColorSkin } from '../assets/skin/colors';
 
 interface TextFieldProps {
   value?: string;
@@ -100,10 +100,10 @@ export default class TextField extends React.Component<
           textFieldStyle.container,
           {
             borderColor: this.state.focused
-              ? ColorThemes.light.infor_border_color
+              ? ColorSkin.light.infor_border_color
               : this.props.helperText?.length
                 ? (this.props.helperTextColor ??
-                  ColorThemes.light.error_main_color)
+                  ColorSkin.light.error_main_color)
                 : (this.borderColor ?? '#00358014'),
             backgroundColor:
               (this.props.disabled ?? false)
@@ -132,11 +132,12 @@ export default class TextField extends React.Component<
                 height: '100%',
                 textAlign: this.textAlign as any,
                 textAlignVertical: this.textAlignVertical as any,
-                fontSize: (this.fontSize ?? TypoSkin.body3.fontSize) as any,
-                fontFamily: this.fontFamily ?? TypoSkin.body3.fontFamily,
+                fontSize: (this.fontSize ??
+                  TextStyleSkin.body3.fontSize) as any,
+                fontFamily: this.fontFamily ?? TextStyleSkin.body3.fontFamily,
                 fontWeight: (this.fontWeight ??
-                  TypoSkin.body3.fontWeight) as any,
-                color: this.color ?? TypoSkin.body3.color,
+                  TextStyleSkin.body3.fontWeight) as any,
+                color: this.color ?? TextStyleSkin.body3.color,
               },
             ]}
             placeholder={this.props.placeholder}
@@ -173,11 +174,11 @@ export default class TextField extends React.Component<
           <Text
             numberOfLines={1}
             style={[
-              TypoSkin.subtitle4,
+              TextStyleSkin.subtitle4,
               {
                 color:
                   this.props.helperTextColor ??
-                  ColorThemes.light.error_main_color,
+                  ColorSkin.light.error_main_color,
                 position: 'absolute',
                 bottom: 0,
                 left: 2,

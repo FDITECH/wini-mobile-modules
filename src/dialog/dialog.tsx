@@ -10,8 +10,8 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { TypoSkin } from '../../assets/skin/typography';
-import { ColorThemes } from '../../assets/skin/colors';
+import { TextStyleSkin } from '../assets/skin/typography';
+import { ColorSkin } from '../assets/skin/colors';
 
 interface DialogState {
   readonly open?: boolean;
@@ -74,16 +74,16 @@ export default class FDialog extends React.Component<Object, DialogState> {
   render() {
     switch (this.state.status) {
       case ComponentStatus.ERROR:
-        var bgColor = ColorThemes.light.error_background;
+        var bgColor = ColorSkin.light.error_background;
         break;
       case ComponentStatus.WARNING:
-        bgColor = ColorThemes.light.warning_background;
+        bgColor = ColorSkin.light.warning_background;
         break;
       case ComponentStatus.SUCCSESS:
-        bgColor = ColorThemes.light.success_background;
+        bgColor = ColorSkin.light.success_background;
         break;
       default:
-        bgColor = ColorThemes.light.infor_background;
+        bgColor = ColorSkin.light.infor_background;
         break;
     }
     return (
@@ -101,14 +101,14 @@ export default class FDialog extends React.Component<Object, DialogState> {
             {getStatusIcon(this.state.status, 64)}
             <Pressable style={{ gap: 4, marginTop: 12, alignItems: 'center' }}>
               {this.state.title ? (
-                <Text style={[TypoSkin.title2, { textAlign: 'center' }]}>
+                <Text style={[TextStyleSkin.title2, { textAlign: 'center' }]}>
                   {this.state.title}
                 </Text>
               ) : null}
               {typeof this.state.content === 'string' ? (
                 <Text
                   style={[
-                    TypoSkin.body3,
+                    TextStyleSkin.body3,
                     { color: '#666666', textAlign: 'center' },
                   ]}
                 >
@@ -126,7 +126,9 @@ export default class FDialog extends React.Component<Object, DialogState> {
                   this.closeDialog();
                 }}
               >
-                <Text style={[TypoSkin.buttonText1, { color: '#00000099' }]}>
+                <Text
+                  style={[TextStyleSkin.buttonText1, { color: '#00000099' }]}
+                >
                   {this.state.titleCancel ?? 'Hủy'}
                 </Text>
               </TouchableOpacity>
@@ -137,7 +139,7 @@ export default class FDialog extends React.Component<Object, DialogState> {
                   this.closeDialog();
                 }}
               >
-                <Text style={[TypoSkin.buttonText1, { color: '#fff' }]}>
+                <Text style={[TextStyleSkin.buttonText1, { color: '#fff' }]}>
                   {this.state.titleSubmit ?? 'Xác nhận'}
                 </Text>
               </TouchableOpacity>

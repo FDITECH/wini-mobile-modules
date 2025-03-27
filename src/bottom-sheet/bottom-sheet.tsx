@@ -10,7 +10,7 @@ import {
   Dimensions,
 } from 'react-native';
 import React, { useRef } from 'react';
-import { TypoSkin } from '../../assets/skin/typography';
+import { TextStyleSkin } from '../assets/skin/typography';
 
 interface BottomSheetState {
   isVisible: boolean;
@@ -97,7 +97,7 @@ export default class BottomSheet extends React.Component<
                   {this.state.prefixAction}
                   <Text
                     style={[
-                      TypoSkin.title3,
+                      TextStyleSkin.title3,
                       {
                         position: 'absolute',
                         left: '12%',

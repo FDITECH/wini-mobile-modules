@@ -44,6 +44,7 @@ export class FPopup extends React.Component<Object, PopupState> {
       <Modal
         visible={this.state.open ?? false}
         transparent
+        statusBarTranslucent={true}
         animationType="slide"
       >
         <View style={styles.overlay}>

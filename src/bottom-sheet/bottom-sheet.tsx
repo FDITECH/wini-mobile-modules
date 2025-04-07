@@ -16,7 +16,6 @@ interface BottomSheetState {
   isVisible: boolean;
   enableDismiss?: boolean;
   dismiss?: () => void;
-  titleText?: string;
   title?: React.ReactNode;
   prefixAction?: React.ReactNode;
   suffixAction?: React.ReactNode;
@@ -34,7 +33,6 @@ export default class BottomSheet extends React.Component<
 
   showBottomSheet({
     enableDismiss,
-    titleText,
     title,
     dismiss,
     prefixAction,
@@ -54,7 +52,6 @@ export default class BottomSheet extends React.Component<
       enableDismiss: enableDismiss,
       title: title,
       dismiss: dismiss,
-      titleText: titleText,
       prefixAction: prefixAction,
       suffixAction: suffixAction,
       children: children,
@@ -70,6 +67,7 @@ export default class BottomSheet extends React.Component<
       <Modal
         visible={this.state.isVisible ?? false}
         transparent
+        statusBarTranslucent={true}
         animationType="slide"
       >
         <Container
@@ -82,17 +80,18 @@ export default class BottomSheet extends React.Component<
               : undefined
           }
         >
-          <View
-            style={{
-              width: 56,
-              height: 6,
-              borderRadius: 10,
-              backgroundColor: '#fff',
-            }}
-          />
           <KeyboardAvoidingView style={[styles.container]}>
+            <View
+              style={{
+                width: 56,
+                marginTop: 8,
+                height: 6,
+                borderRadius: 10,
+                backgroundColor: '#EAEAEA',
+              }}
+            />
             <Pressable style={{ width: '100%' }}>
-              {this.state.titleText ? (
+              {this.state.title ? (
                 <View style={styles.header}>
                   {this.state.prefixAction}
                   <Text
@@ -107,7 +106,7 @@ export default class BottomSheet extends React.Component<
                       },
                     ]}
                   >
-                    {this.state.titleText ?? '-'}
+                    {this.state.title ?? '-'}
                   </Text>
                   {this.state.suffixAction}
                 </View>
@@ -146,7 +145,7 @@ const Container = ({
         useNativeDriver: false,
       }),
       onPanResponderEnd: (ev) => {
-        if (ev.nativeEvent.pageY >= scrSize.height - 80) {
+        if (ev.nativeEvent.pageY >= scrSize.height - 30) {
           if (onDismiss) onDismiss();
         } else {
           pan.y.setValue(0);
@@ -233,10 +232,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     minHeight: 48,
     width: '100%',
-    borderBottomWidth: 0.5,
-    borderStyle: 'solid',
     position: 'relative',
-    borderColor: '#71757C33',
   },
 });
 

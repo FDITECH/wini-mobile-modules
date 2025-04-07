@@ -7,6 +7,8 @@ import {
 } from 'react-native';
 import { TextStyleSkin } from '../assets/skin/typography';
 import { useState } from 'react';
+import Winicon from '../wini-icon/wini_icon';
+import { ColorSkin } from '../assets/skin/colors';
 
 export default function NumberPicker({
   initValue = 0,
@@ -31,7 +33,7 @@ export default function NumberPicker({
     <View style={[styles.container, style]}>
       <TouchableOpacity
         onPress={
-          disabled
+          disabled || value === 0
             ? undefined
             : () => {
                 if (value) {
@@ -45,14 +47,15 @@ export default function NumberPicker({
           styles.button,
           buttonStyle,
           {
-            backgroundColor: disabled
-              ? '#0035801F'
-              : buttonStyle.backgroundColor,
-            opacity: hideMinus ? 0 : value ? 1 : 0,
+            backgroundColor:
+              disabled || value === 0
+                ? ColorSkin.light.neutral_disable_background_color
+                : buttonStyle.backgroundColor,
+            opacity: hideMinus ? 0 : 1,
           },
         ]}
       >
-        {/* <FontAwesomeIcon icon={faMinus} size={12} color="#161C24A3" /> */}
+        <Winicon src="outline/layout/minus" size={12} color="#161C24A3" />
       </TouchableOpacity>
       <Text
         style={[
@@ -80,12 +83,12 @@ export default function NumberPicker({
           buttonStyle,
           {
             backgroundColor: disabled
-              ? '#0035801F'
+              ? ColorSkin.light.neutral_disable_background_color
               : buttonStyle.backgroundColor,
           },
         ]}
       >
-        {/* <FontAwesomeIcon icon={faPlus} size={12} color="#161C24A3" /> */}
+        <Winicon src="outline/layout/plus" size={12} color="#161C24A3" />
       </TouchableOpacity>
     </View>
   );

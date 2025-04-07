@@ -1,6 +1,6 @@
 {
   "name": "wini-mobile-components",
-  "version": "1.0.12",
+  "version": "1.0.21",
   "description": "wini-mobile-components",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
